@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-client-scripts",
+  "version": "1.0.0",
+  "description": "to test strapi backend content",
+  "main": "index.js",
+  "repository": "https://github.com/demystifying-dev/nodejs-client-scripts",
+  "author": "victorkane",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
