@@ -1,8 +1,10 @@
 const axios = require('axios');
+require('dotenv').config();
 
 const login = async () => {
+  const api = 'users';
   try {
-	  const url = 'http://awebfactory.org:4004/users';
+	  const url = `${process.env.API_SERVER}/${api}`
 		const data = {};
 		const config = {
 		  headers: {
