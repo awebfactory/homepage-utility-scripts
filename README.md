@@ -3,3 +3,10 @@ Javascript utility scripts to manage and test content management against Strapi 
 May eventually evolve into command-line CMS cli.
 
 Much of the migration from Drupal 6 is being managed by our own [DurableDrupal Drush scripts](https://github.com/DurableDrupal/drush-migration-scripts), please feel free to check out that repo also.
+
+Common use:
+
+```bash
+node get-api-request.js /articles?name=One | json > data/featured.txt
+200 OK
+```
