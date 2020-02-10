@@ -13,7 +13,8 @@ const getApiReq = async (api) => {
     // console.log(config)
 	  res = await axios.get(url, config);
 		// console.log('res.data', res.data);
-		console.log(res.status, res.statusText, "\n", res.data);
+		console.error(res.status, res.statusText, "\n");
+    console.log(JSON.stringify(res.data));
 	} catch (err) {
 	  console.error(err.message);
 	}
