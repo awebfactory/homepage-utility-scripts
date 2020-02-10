@@ -1,7 +1,7 @@
 {
   "name": "nodejs-client-scripts",
   "version": "1.0.0",
-  "description": "to test strapi backend content",
+  "description": "Node.js utility scripts to manage strapi backend content",
   "main": "index.js",
   "repository": "https://github.com/demystifying-dev/nodejs-client-scripts",
   "author": "victorkane",
