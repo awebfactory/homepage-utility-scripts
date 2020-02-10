@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-client-scripts",
+  "name": "homepage-utility-scripts",
   "version": "1.0.0",
   "description": "Node.js utility scripts to manage strapi backend content",
   "main": "index.js",
