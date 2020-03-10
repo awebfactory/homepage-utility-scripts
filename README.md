@@ -6,7 +6,9 @@ Much of the migration from Drupal 6 is being managed by our own [DurableDrupal D
 
 Common use:
 
+Create output directory. Then run something like the following:
+
 ```bash
-node get-api-request.js /articles?name=One | json > data/featured.txt
+node scripts/get-api-request.js /articles?name=One | json > output/featured.txt
 200 OK
 ```
