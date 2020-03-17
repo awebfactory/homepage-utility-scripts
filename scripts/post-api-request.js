@@ -1,8 +1,10 @@
 const axios = require('axios')
 require('dotenv').config()
 
-const data = require('../postit/post-data.json')
+// get api and filename from command-line argument like `tags` (not `/tags`)
 const api = process.argv[2]
+const data = require(`../postit/post-${api}.json`)
+// console.log(data, '\n')
 
 // console.log(data);
 
@@ -10,7 +12,8 @@ const postit = () => {
   data.forEach(async item => {
     // console.log('item: \n', item)
     try {
-      const url = `${process.env.API_SERVER}${api}`
+      // add in leading slash
+      const url = `${process.env.API_SERVER}/${api}`
       const config = {
         headers: {
           'Content-Type': 'application/json',
