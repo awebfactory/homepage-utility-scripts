@@ -3,7 +3,8 @@ require('dotenv').config()
 
 const getApiReq = async api => {
   try {
-    const url = `${process.env.API_SERVER}${api}`
+    // add in leading slash
+    const url = `${process.env.API_SERVER}/${api}`
     const config = {
       headers: {
         'Content-Type': 'application/json',
