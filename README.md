@@ -56,6 +56,23 @@ using `id` instead of `_id` provokes a Mongoose error of type
 ]
 ```
 
+or, thanks to a tip by @DMehaffy, you can simplify the array of tags:
+
+```json
+[
+  {
+    "title": "Latest blog post DMehaffy style",
+    "description": "This is the latest blog post",
+    "body": "much better",
+    "tags": [
+      "5e6a74efc9e24d7fdc2bf12a",
+      "5e6a74f0c9e24d7fdc2bf139",
+      "5e6a74efc9e24d7fdc2bf133"
+    ]
+  }
+]
+```
+
 Command line execution of POST:
 
 ```bash
