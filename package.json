@@ -7,7 +7,9 @@
   "author": "victorkane",
   "license": "GPL-3.0",
   "scripts": {
-    "get": "node needle-scripts/get-api-request"
+    "get": "node needle-scripts/get-api-request",
+    "post": "node needle-scripts/post-api-request",
+    "put": "node needle-scripts/put-api-request"
   },
   "dependencies": {
     "axios": "^0.19.2",
