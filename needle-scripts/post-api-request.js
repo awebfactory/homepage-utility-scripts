@@ -15,7 +15,7 @@ const postApiReq = (api, data) => {
         },
       }
       const res = await needle('post', url, item, options)
-      console.log(res.body)
+      console.log(JSON.stringify(res.body, null, 4))
     } catch (err) {
       console.error(err.message)
     }

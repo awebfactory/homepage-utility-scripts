@@ -91,7 +91,7 @@ Command line execution of POST:
       tagDescription: '',
       vocabSlug: 'freetags',
       vocabName: 'FreeTags',
-      legacyTag: [Object],
+      legacyTag: [Object],                         // expanded during actual execution
       createdAt: '2020-03-12T17:44:15.881Z',
       updatedAt: '2020-03-12T17:44:15.887Z',
       __v: 1,
@@ -104,7 +104,7 @@ Command line execution of POST:
       tagDescription: '',
       vocabSlug: 'freetags',
       vocabName: 'FreeTags',
-      legacyTag: [Object],
+      legacyTag: [Object],                         // expanded during actual execution
       createdAt: '2020-03-12T17:44:16.084Z',
       updatedAt: '2020-03-12T17:44:16.091Z',
       __v: 1,
@@ -117,7 +117,7 @@ Command line execution of POST:
       tagDescription: '',
       vocabSlug: 'freetags',
       vocabName: 'FreeTags',
-      legacyTag: [Object],
+      legacyTag: [Object],                         // expanded during actual execution
       createdAt: '2020-03-12T17:44:15.993Z',
       updatedAt: '2020-03-12T17:44:16.003Z',
       __v: 1,
@@ -161,7 +161,7 @@ blog-posts/5e70a09482f2837d262aee5e
       tagDescription: '',
       vocabSlug: 'freetags',
       vocabName: 'FreeTags',
-      legacyTag: [Object],
+      legacyTag: [Object],                         // expanded during actual execution
       createdAt: '2020-03-12T17:44:15.881Z',
       updatedAt: '2020-03-12T17:44:15.887Z',
       __v: 1,
@@ -174,7 +174,7 @@ blog-posts/5e70a09482f2837d262aee5e
       tagDescription: '',
       vocabSlug: 'freetags',
       vocabName: 'FreeTags',
-      legacyTag: [Object],
+      legacyTag: [Object],                         // expanded during actual execution
       createdAt: '2020-03-12T17:44:16.084Z',
       updatedAt: '2020-03-12T17:44:16.091Z',
       __v: 1,
@@ -187,7 +187,7 @@ blog-posts/5e70a09482f2837d262aee5e
       tagDescription: '',
       vocabSlug: 'freetags',
       vocabName: 'FreeTags',
-      legacyTag: [Object],
+      legacyTag: [Object],                         // expanded during actual execution
       createdAt: '2020-03-12T17:44:15.993Z',
       updatedAt: '2020-03-12T17:44:16.003Z',
       __v: 1,
@@ -243,7 +243,7 @@ $ node needle-scripts/post-api-request blog-posts
       tagDescription: '',
       vocabSlug: 'freetags',
       vocabName: 'FreeTags',
-      legacyTag: [Object],
+      legacyTag: [Object],                         // expanded during actual execution
       createdAt: '2020-03-12T17:44:15.881Z',
       updatedAt: '2020-03-12T17:44:15.887Z',
       __v: 1,
@@ -256,7 +256,7 @@ $ node needle-scripts/post-api-request blog-posts
       tagDescription: '',
       vocabSlug: 'freetags',
       vocabName: 'FreeTags',
-      legacyTag: [Object],
+      legacyTag: [Object],                         // expanded during actual execution
       createdAt: '2020-03-12T17:44:16.084Z',
       updatedAt: '2020-03-12T17:44:16.091Z',
       __v: 1,
@@ -269,7 +269,7 @@ $ node needle-scripts/post-api-request blog-posts
       tagDescription: '',
       vocabSlug: 'freetags',
       vocabName: 'FreeTags',
-      legacyTag: [Object],
+      legacyTag: [Object],                         // expanded during actual execution
       createdAt: '2020-03-12T17:44:15.993Z',
       updatedAt: '2020-03-12T17:44:16.003Z',
       __v: 1,
