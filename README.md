@@ -13,7 +13,7 @@ please feel free to check out that repo also.
 ### Using Needle For HTTP Utils N Tests
 
 Curiosity concerning Needle aroused very recently by
-[Uploading A File To Strapi In Node.js - Drew Town Dev](:/7934fe24add9492ab3fe4437caf712f7)
+[Uploading A File To Strapi In Node.js - Drew Town Dev](https://www.drewtown.dev/post/uploading-a-file-to-strapi-in-node-js/)
 
 Now really impressed by Needle's more than
 [7 million downloads per week (npm)](https://www.npmjs.com/package/needle), and
@@ -1045,7 +1045,3 @@ Command line execution of POST:
   id: '5e7094f982f2837d262aee5d'
 }
 ```
-
-<small>Our original use of the
-[Needle HTTP client package](https://www.npmjs.com/package/needle) inspired by
-[Uploading A File To Strapi In Node.js - Drew Town Dev](https://www.drewtown.dev/post/uploading-a-file-to-strapi-in-node-js/)</small>
