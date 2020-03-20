@@ -3,7 +3,7 @@ require('dotenv').config()
 
 const api = process.argv[2]
 
-console.log(api)
+// console.log(api)
 
 const getApiReq = async api => {
   try {
@@ -17,7 +17,9 @@ const getApiReq = async api => {
     // not necessary: {json: true}
     // const res = await needle('get', url, {json: true}, options)
     const res = await needle('get', url, options)
-    console.log(res.body)
+    // result comes back in JSON so no need to parse.
+    // Additional params null, 4 make for pretty print
+    console.log(JSON.stringify(res.body, null, 4))
   } catch (err) {
     console.error(err.message)
   }
