@@ -29,7 +29,7 @@ Needle based scripts are working on all operations in these utility scripts, and
 we use simple `package.json` script directives to easily execute them using
 convention based data files:
 
-<details><summary><strong>Click for GET count of all existing blog posts, GET all, GET with limit of 3</strong></summary>
+<details><summary><strong>Click for GET count of all existing blog posts, GET all, GET with limit of 3 or find by title</strong></summary>
 
 <details><summary>Count (using Strapi `count` API)</summary>
 
@@ -86,7 +86,7 @@ $ node needle-scripts/get-api-request blog-posts
 <details><summary>GET with `filters`</summary>
 
 We can also simply apply any Strapi API GET expression, including
-[filters](https://strapi.io/documentation/3.0.0-beta.x/content-api/parameters.html#filters):
+[Strapi filters](https://strapi.io/documentation/3.0.0-beta.x/content-api/parameters.html#filters):
 
 ```json
  yarn get blog-posts?_limit=2
@@ -266,8 +266,6 @@ node needle-scripts/get-api-request 'blog-posts?title=Latest blog post DMehaffy 
 
 </details>
 
-
-</details>
 
 </details>
 
