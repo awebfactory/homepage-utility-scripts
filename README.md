@@ -1118,7 +1118,7 @@ Done in 0.23s.
 
 Let's get the `count`, then `delete`, then get the `count` again.
 
-````json
+```json
  yarn get blog-posts/count
 yarn run v1.22.1
 $ node needle-scripts/get-api-request blog-posts/count
@@ -1163,8 +1163,9 @@ the options {
             "__v": 1,
             "id": "5e6a74efc9e24d7fdc2bf12a"
         },
+        ...
 
-```json
+
  yarn get blog-posts/count
 yarn run v1.22.1
 $ node needle-scripts/get-api-request blog-posts/count
@@ -1252,7 +1253,7 @@ $ node needle-scripts/get-api-request blog-posts/count
 11
 Done in 0.30s.
 
-````
+```
 
 </details>
 
