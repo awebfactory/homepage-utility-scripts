@@ -9,7 +9,8 @@
   "scripts": {
     "get": "node needle-scripts/get-api-request",
     "post": "node needle-scripts/post-api-request",
-    "put": "node needle-scripts/put-api-request"
+    "put": "node needle-scripts/put-api-request",
+    "delete": "node needle-scripts/delete-api-request"
   },
   "dependencies": {
     "axios": "^0.19.2",
