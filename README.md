@@ -29,268 +29,254 @@ Needle based scripts are working on all operations in these utility scripts, and
 we use simple `package.json` script directives to easily execute them using
 convention based data files:
 
-<details><summary><strong>Click for GET details</strong></summary>
+<details><summary><strong>Click for GET count of all existing blog posts, GET all, GET with limit of 3</strong></summary>
 
-```
-yarn get articles
-[
-  {
-    authors: [],
-    _id: '5e2853bc6fe77b5b328c484d',
-    name: 'Three',
-    description: 'Cras id erat posuere, efficitur nisi vel, scelerisque lectus. Pellentesque gravida facilisis velit, id sollicitudin tortor congue ac. Etiam tellus augue, varius vitae elit ut, porta aliquam arcu. Sed mattis, dui non sollicitudin gravida, est sapien cur
-sus lorem, eget ultrices ex ipsum nec mauris. Suspendisse placerat massa sit amet orci consectetur dictum. Donec eu erat non ipsum volutpat molestie. Proin at diam lobortis, aliquet mauris non, interdum mi. Suspendisse id ultricies nisi. Vestibulum aliquet tincidunt nib
-h rhoncus feugiat. In ipsum lorem, ultrices vitae gravida sit amet, posuere at ex. Mauris ut vestibulum leo. Sed iaculis diam eu nulla auctor fermentum eu non nunc. Donec faucibus convallis leo a vehicula. Phasellus rhoncus orci ac tellus fermentum, vitae lobortis sem i
-nterdum. ',
-    pubdate: '2020-01-22',
-    createdAt: '2020-01-22T13:53:00.388Z',
-    updatedAt: '2020-01-22T13:53:00.388Z',
-    __v: 0,
-    photo: null,
-    id: '5e2853bc6fe77b5b328c484d'
-  },
-  {
-    authors: [],
-    _id: '5e285a3a6fe77b5b328c484e',
-    name: 'Four',
-    description: 'Very short description for this article number four sent in by curl',
-    pubdate: '2020-01-22',
-    createdAt: '2020-01-22T14:20:42.166Z',
-    updatedAt: '2020-01-22T14:20:42.166Z',
-    __v: 0,
-    photo: null,
-    id: '5e285a3a6fe77b5b328c484e'
-  },
-  {
-    authors: [],
-    _id: '5e285adc6fe77b5b328c484f',
-    name: 'Five',
-    description: 'Extremely, very, very short description for this second article number four sent in by curl.',
-    pubdate: '2020-01-22',
-    createdAt: '2020-01-22T14:23:24.828Z',
-    updatedAt: '2020-01-22T15:34:22.184Z',
-    __v: 0,
-    photo: null,
-    id: '5e285adc6fe77b5b328c484f'
-  },
-  {
-    authors: [ [Object] ],
-    _id: '5e28793a6fe77b5b328c4850',
-    name: 'Two',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et gravida elit. Proin a tincidunt erat, et hendrerit elit. Proin lacinia vitae nibh vel auctor. Nunc blandit enim et pretium gravida. Sed dui lorem, convallis pharetra ligula ut, luctus lobo
-rtis purus. Proin consequat eget elit et commodo. Sed mattis mauris vel nisl cursus imperdiet. Quisque id ligula in est auctor sollicitudin. Praesent sit amet sollicitudin magna, et fermentum eros. In eget fermentum lorem, vitae vestibulum nisl. Class aptent taciti soci
-osqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras dapibus, nulla at cursus viverra, nisi mauris dapibus leo, vitae scelerisque risus tortor sed massa. In eleifend sodales risus, ut convallis justo rutrum vel. Orci varius natoque penatibus et magni
-s dis parturient montes, nascetur ridiculus mus. Duis eros velit, tristique ut porta et, aliquam id magna. Morbi quis purus porttitor, malesuada ex vitae, finibus nisl.',
-    pubdate: '2020-01-22',
-    createdAt: '2020-01-22T16:32:58.755Z',
-    updatedAt: '2020-01-30T16:30:24.434Z',
-    __v: 0,
-    photo: null,
-    id: '5e28793a6fe77b5b328c4850'
-  },
-  {
-    authors: [ [Object] ],
-    _id: '5e28881c6fe77b5b328c4852',
-    name: 'Springtime',
-    description: 'Praesent erat ex, bibendum nec dui id, pharetra tincidunt tellus. Fusce id nisl euismod, pharetra massa a, elementum metus. Etiam vel ante cursus, faucibus metus eget, aliquet risus. Aenean faucibus risus ac magna cursus tempor vitae in elit. Vivamus sagittis ex et urna mollis elementum. Suspendisse potenti. Donec hendrerit vulputate tempor. Nunc fermentum est a mattis ultrices. Vivamus quam magna, faucibus et posuere tincidunt, sagittis sed ex. Praesent sapien erat, gravida eget scelerisque in, accumsan in velit. Curabitur id dolor elementum, fermentum nibh quis, lobortis ante. Curabitur feugiat urna justo, sit amet lobortis lorem hendrerit a. In eu iaculis odio.',
-    pubdate: '2020-01-22',
-    createdAt: '2020-01-22T17:36:28.950Z',
-    updatedAt: '2020-01-30T16:29:59.274Z',
-    __v: 0,
-    photo: null,
-    id: '5e28881c6fe77b5b328c4852'
-  },
-  {
-    authors: [ [Object], [Object] ],
-    _id: '5e3446966bf7252da9f7e7e1',
-    name: 'Kimberly Clark news',
-    description: 'one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three one two three ',
-    pubdate: '2020-02-06',
-    createdAt: '2020-01-31T15:24:06.392Z',
-    updatedAt: '2020-02-03T13:19:36.804Z',
-    __v: 0,
-    photo: {
-      _id: '5e3447ec5fc391438a0a086c',
-      name: 'guest-room-dining-room-restaurant-inn.jpg',
-      sha256: 'cW-B5c5zg36uQZZJpq_+DUkCCqO9Ejy3h-uzebmlxRg',
-      hash: 'a4da6af4df604ad88f8af395b377f123',
-      ext: '.jpg',
-      mime: 'image/jpeg',
-      size: 89.67,
-      url: '/uploads/a4da6af4df604ad88f8af395b377f123.jpg',
-      provider: 'local',
-      related: [Array],
-      createdAt: '2020-01-31T15:29:48.352Z',
-      updatedAt: '2020-01-31T15:29:48.368Z',
-      __v: 1,
-      id: '5e3447ec5fc391438a0a086c'
-    },
-    id: '5e3446966bf7252da9f7e7e1'
-  },
-    authors: [ [Object] ],
-    _id: '5e2853496fe77b5b328c484b',
-    name: 'One',
-    description: 'In hac habitasse platea dictumst. Nulla viverra sapien aliquam neque pulvinar, ultrices posuere ante scelerisque. Ut sit amet lacus tincidunt, finibus ipsum ut, finibus diam. Mauris luctus varius purus, ac dictum libero tristique in. Vivamus sit amet viverra dolor. Maecenas sodales sed tellus eu consequat. Ut sed ullamcorper elit. Nunc volutpat est non dapibus scelerisque. Quisque nec varius nibh. Ut euismod id orci id volutpat. In egestas augue vitae posuere ullamcorper. Quisque lobortis massa id turpis sagittis, sit amet imperdiet justo suscipit. Nam risus tortor, dapibus a fermentum nec, aliquet sed odio. Sed interdum turpis sodales eros fermentum rhoncus. Etiam iaculis libero in ultrices consequat. Praesent ut leo consectetur, pulvinar ipsum sed, accumsan quam. ',
-    pubdate: '2020-01-22',
-    createdAt: '2020-01-22T13:51:05.424Z',
-    updatedAt: '2020-03-04T15:25:48.868Z',
-    __v: 0,
-    cover: [ [Object] ],
-    photo: null,
-    id: '5e2853496fe77b5b328c484b'
-  }
-]
-```
+<details><summary>Count (using Strapi `count` API)</summary>
 
-or
-
-```
-yarn get blog-posts/5e70a09482f2837d262aee5e
+```bash
+yarn get blog-posts/count
 yarn run v1.22.1
-$ node needle-scripts/get-api-request blog-posts/5e70a09482f2837d262aee5e
-blog-posts/5e70a09482f2837d262aee5e
-{
-  tags: [
-    {
-      _id: '5e6a74efc9e24d7fdc2bf12a',
-      tagSlug: 'bitnami',
-      tagName: 'bitnami',
-      tagDescription: '',
-      vocabSlug: 'freetags',
-      vocabName: 'FreeTags',
-      legacyTag: [Object],
-      createdAt: '2020-03-12T17:44:15.881Z',
-      updatedAt: '2020-03-12T17:44:15.887Z',
-      __v: 1,
-      id: '5e6a74efc9e24d7fdc2bf12a'
-    },
-    {
-      _id: '5e6a74f0c9e24d7fdc2bf139',
-      tagSlug: 'macvim',
-      tagName: 'macvim',
-      tagDescription: '',
-      vocabSlug: 'freetags',
-      vocabName: 'FreeTags',
-      legacyTag: [Object],
-      createdAt: '2020-03-12T17:44:16.084Z',
-      updatedAt: '2020-03-12T17:44:16.091Z',
-      __v: 1,
-      id: '5e6a74f0c9e24d7fdc2bf139'
-    },
-    {
-      _id: '5e6a74efc9e24d7fdc2bf133',
-      tagSlug: 'mac',
-      tagName: 'mac',
-      tagDescription: '',
-      vocabSlug: 'freetags',
-      vocabName: 'FreeTags',
-      legacyTag: [Object],
-      createdAt: '2020-03-12T17:44:15.993Z',
-      updatedAt: '2020-03-12T17:44:16.003Z',
-      __v: 1,
-      id: '5e6a74efc9e24d7fdc2bf133'
-    }
-  ],
-  _id: '5e70a09482f2837d262aee5e',
-  title: 'Latest blog post DMehaffy authored',
-  description: 'This is the latest blog post',
-  body: 'much better',
-  createdAt: '2020-03-17T10:04:04.172Z',
-  updatedAt: '2020-03-17T10:04:04.175Z',
-  __v: 0,
-  id: '5e70a09482f2837d262aee5e'
-}
+$ node needle-scripts/get-api-request blog-posts/count
+9
+Done in 0.21s.
+
+yarn get tags/count
+yarn run v1.22.1
+$ node needle-scripts/get-api-request tags/count
+178
 Done in 0.21s.
 ```
 
 </details>
 
-<details><summary><strong>Click for POST details</strong></summary>
+<details><summary>Get (all)</summary>
 
-Given the data file at `postit/post-blog-posts`:
-
-```
- cat postit/post-blog-posts.json
-[
-  {
-    "title": "Simple blog post",
-    "description": "This is the simplest blog post",
-    "body": "much simpler",
-    "tags": [
-      "5e6a74efc9e24d7fdc2bf12a",
-      "5e6a74f0c9e24d7fdc2bf139",
-      "5e6a74efc9e24d7fdc2bf133"
-    ]
-  }
-]
-```
-
-We simply do:
-
-```bash
-yarn post blog-posts
+```json
+yarn get blog-posts
 yarn run v1.22.1
-$ node needle-scripts/post-api-request blog-posts
-{
-  tags: [
+$ node needle-scripts/get-api-request blog-posts
+[
     {
-      _id: '5e6a74efc9e24d7fdc2bf12a',
-      tagSlug: 'bitnami',
-      tagName: 'bitnami',
-      tagDescription: '',
-      vocabSlug: 'freetags',
-      vocabName: 'FreeTags',
-      legacyTag: [Object],
-      createdAt: '2020-03-12T17:44:15.881Z',
-      updatedAt: '2020-03-12T17:44:15.887Z',
-      __v: 1,
-      id: '5e6a74efc9e24d7fdc2bf12a'
+        "tags": [],
+        "_id": "5e3556739d28fe03758b1c0e",
+        "title": "First blog post",
+        "description": "This is the first blog post",
+        "body": "adfadfadf",
+        "createdAt": "2020-02-01T10:44:03.933Z",
+        "updatedAt": "2020-02-04T11:30:25.602Z",
+        "__v": 0,
+        "id": "5e3556739d28fe03758b1c0e"
     },
     {
-      _id: '5e6a74f0c9e24d7fdc2bf139',
-      tagSlug: 'macvim',
-      tagName: 'macvim',
-      tagDescription: '',
-      vocabSlug: 'freetags',
-      vocabName: 'FreeTags',
-      legacyTag: [Object],
-      createdAt: '2020-03-12T17:44:16.084Z',
-      updatedAt: '2020-03-12T17:44:16.091Z',
-      __v: 1,
-      id: '5e6a74f0c9e24d7fdc2bf139'
+        "tags": [],
+        "_id": "5e70891182f2837d262aee57",
+        "title": "Third blog post",
+        "description": "This is the third blog post",
+        "body": "oh, so much better",
+        "createdAt": "2020-03-17T08:23:45.413Z",
+        "updatedAt": "2020-03-17T08:23:45.413Z",
+        "__v": 0,
+        "id": "5e70891182f2837d262aee57"
     },
-    {
-      _id: '5e6a74efc9e24d7fdc2bf133',
-      tagSlug: 'mac',
-      tagName: 'mac',
-      tagDescription: '',
-      vocabSlug: 'freetags',
-      vocabName: 'FreeTags',
-      legacyTag: [Object],
-      createdAt: '2020-03-12T17:44:15.993Z',
-      updatedAt: '2020-03-12T17:44:16.003Z',
-      __v: 1,
-      id: '5e6a74efc9e24d7fdc2bf133'
-    }
-  ],
-  _id: '5e73f34382f2837d262aee5f',
-  title: 'Simple blog post',
-  description: 'This is the simplest blog post',
-  body: 'much simpler',
-  createdAt: '2020-03-19T22:33:39.669Z',
-  updatedAt: '2020-03-19T22:33:39.679Z',
-  __v: 0,
-  id: '5e73f34382f2837d262aee5f'
-}
-Done in 0.33s.
+]
 ```
 
 </details>
 
-<details><summary><strong>Click for PUT details</strong></summary>
+<details><summary>GET with `filters`</summary>
+
+We can also simply apply any Strapi API GET expression, including
+[filters](https://strapi.io/documentation/3.0.0-beta.x/content-api/parameters.html#filters):
+
+```json
+ yarn get blog-posts?_limit=2
+yarn run v1.22.1
+$ node needle-scripts/get-api-request 'blog-posts?_limit=2'
+[
+    {
+        "tags": [],
+        "_id": "5e3556739d28fe03758b1c0e",
+        "title": "First blog post",
+        "description": "This is the first blog post",
+        "body": "adfadfadf",
+        "createdAt": "2020-02-01T10:44:03.933Z",
+        "updatedAt": "2020-02-04T11:30:25.602Z",
+        "__v": 0,
+        "id": "5e3556739d28fe03758b1c0e"
+    },
+    {
+        "tags": [],
+        "_id": "5e70891182f2837d262aee57",
+        "title": "Third blog post",
+        "description": "This is the third blog post",
+        "body": "oh, so much better",
+        "createdAt": "2020-03-17T08:23:45.413Z",
+        "updatedAt": "2020-03-17T08:23:45.413Z",
+        "__v": 0,
+        "id": "5e70891182f2837d262aee57"
+    }
+]
+Done in 0.22s.
+```
+
+</details>
+
+<details><summary>We can GET by id</summary>
+
+```json
+ yarn get blog-posts/5e70a09482f2837d262aee5e
+yarn run v1.22.1
+$ node needle-scripts/get-api-request blog-posts/5e70a09482f2837d262aee5e
+{
+    "tags": [
+        {
+            "_id": "5e6a74efc9e24d7fdc2bf12a",
+            "tagSlug": "bitnami",
+            "tagName": "bitnami",
+            "tagDescription": "",
+            "vocabSlug": "freetags",
+            "vocabName": "FreeTags",
+            "legacyTag": {
+                "_id": "5e6a74efc9e24d7fdc2bf12b",
+                "tagId": "173",
+                "tagSlug": "bitnami",
+                "tagName": "bitnami",
+                "tagDescription": "",
+                "vocabId": "3",
+                "vocabSlug": "freetags",
+                "vocabName": "FreeTags",
+                "createdAt": "2020-03-12T17:44:15.883Z",
+                "updatedAt": "2020-03-12T17:44:15.883Z",
+                "__v": 0,
+                "id": "5e6a74efc9e24d7fdc2bf12b"
+            },
+            "createdAt": "2020-03-12T17:44:15.881Z",
+            "updatedAt": "2020-03-12T17:44:15.887Z",
+            "__v": 1,
+            "id": "5e6a74efc9e24d7fdc2bf12a"
+        },
+        {
+            "_id": "5e6a74f0c9e24d7fdc2bf139",
+            "tagSlug": "macvim",
+            "tagName": "macvim",
+            "tagDescription": "",
+            "vocabSlug": "freetags",
+            "vocabName": "FreeTags",
+            "legacyTag": {
+                "_id": "5e6a74f0c9e24d7fdc2bf13a",
+                "tagId": "178",
+                "tagSlug": "macvim",
+                "tagName": "macvim",
+                "tagDescription": "",
+                "vocabId": "3",
+                "vocabSlug": "freetags",
+                "vocabName": "FreeTags",
+                "createdAt": "2020-03-12T17:44:16.086Z",
+                "updatedAt": "2020-03-12T17:44:16.086Z",
+                "__v": 0,
+                "id": "5e6a74f0c9e24d7fdc2bf13a"
+            },
+            "createdAt": "2020-03-12T17:44:16.084Z",
+            "updatedAt": "2020-03-12T17:44:16.091Z",
+            "__v": 1,
+            "id": "5e6a74f0c9e24d7fdc2bf139"
+        },
+        {
+            "_id": "5e6a74efc9e24d7fdc2bf133",
+            "tagSlug": "mac",
+            "tagName": "mac",
+            "tagDescription": "",
+            "vocabSlug": "freetags",
+            "vocabName": "FreeTags",
+            "legacyTag": {
+                "_id": "5e6a74efc9e24d7fdc2bf134",
+                "tagId": "176",
+                "tagSlug": "mac",
+                "tagName": "mac",
+                "tagDescription": "",
+                "vocabId": "3",
+                "vocabSlug": "freetags",
+                "vocabName": "FreeTags",
+                "createdAt": "2020-03-12T17:44:15.996Z",
+                "updatedAt": "2020-03-12T17:44:15.996Z",
+                "__v": 0,
+                "id": "5e6a74efc9e24d7fdc2bf134"
+            },
+            "createdAt": "2020-03-12T17:44:15.993Z",
+            "updatedAt": "2020-03-12T17:44:16.003Z",
+            "__v": 1,
+            "id": "5e6a74efc9e24d7fdc2bf133"
+        }
+    ],
+    "_id": "5e70a09482f2837d262aee5e",
+    "title": "Latest blog post DMehaffy authored",
+    "description": "This is the latest blog post",
+    "body": "much better",
+    "createdAt": "2020-03-17T10:04:04.172Z",
+    "updatedAt": "2020-03-17T10:04:04.175Z",
+    "__v": 0,
+    "id": "5e70a09482f2837d262aee5e"
+}
+Done in 0.31s.
+```
+
+</details>
+
+<details><summary>Or, using filters again, find the same blog post by title</summary>
+
+````json
+node needle-scripts/get-api-request 'blog-posts?title=Latest blog post DMehaffy authored'
+[
+    {
+        "tags": [
+            {
+                "_id": "5e6a74efc9e24d7fdc2bf12a",
+                "tagSlug": "bitnami",
+                "tagName": "bitnami",
+                "tagDescription": "",
+                "vocabSlug": "freetags",
+                "vocabName": "FreeTags",
+                "legacyTag": {
+                    "_id": "5e6a74efc9e24d7fdc2bf12b",
+                    "tagId": "173",
+                    "tagSlug": "bitnami",
+                    "tagName": "bitnami",
+                    "tagDescription": "",
+                    "vocabId": "3",
+                    "vocabSlug": "freetags",
+                    "vocabName": "FreeTags",
+                    "createdAt": "2020-03-12T17:44:15.883Z",
+                    "updatedAt": "2020-03-12T17:44:15.883Z",
+                    "__v": 0,
+                    "id": "5e6a74efc9e24d7fdc2bf12b"
+
+...
+
+        "_id": "5e70a09482f2837d262aee5e",
+        "title": "Latest blog post DMehaffy authored",
+        "description": "This is the latest blog post",
+        "body": "much better",
+        "createdAt": "2020-03-17T10:04:04.172Z",
+        "updatedAt": "2020-03-17T10:04:04.175Z",
+        "__v": 0,
+        "id": "5e70a09482f2837d262aee5e"
+    }
+]
+
+
+</details>
+
+
+</details>
+
+</details>
+
+<details><summary><strong>Click for POST, GET, PUT details</strong></summary>
 
 First we do a POST a new blog post, then we note the `_id`, then `GET`, and
 finally update with a `PUT`. Click to see details of each:
+
+</details>
 
 <details><summary><strong>&nbsp;&nbsp;&nbsp; 1: POST blog post</strong></summary>
 
@@ -363,7 +349,7 @@ $ node needle-scripts/post-api-request blog-posts
     "id": "5e74adc382f2837d262aee60"
 }
 Done in 0.33s.
-```
+````
 
 </details>
 
