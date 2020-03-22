@@ -1,4 +1,4 @@
-## Homepage Utility Scripts
+# Homepage Utility Scripts
 
 Node.js utility scripts to manage and test content management against Strapi
 backend for the AWebFactory.com homepage migration from Drupal 6 to fullstack
@@ -10,7 +10,7 @@ Much of the migration from Drupal 6 is being managed by our own
 [DurableDrupal Drush scripts](https://github.com/DurableDrupal/drush-migration-scripts),
 please feel free to check out that repo also.
 
-### Using Needle For HTTP Utils N Tests
+## Using Node.js + Needle utility scripts
 
 Curiosity concerning Needle aroused very recently by
 [Uploading A File To Strapi In Node.js - Drew Town Dev](https://www.drewtown.dev/post/uploading-a-file-to-strapi-in-node-js/)
@@ -28,6 +28,8 @@ for consistency.
 Needle based scripts are working on all operations in these utility scripts, and
 we use simple `package.json` script directives to easily execute them using
 convention based data files:
+
+### GET
 
 <details><summary><strong>Click for GET count of all existing blog posts, GET all, GET with limit of 3 or find by title</strong></summary>
 
@@ -224,7 +226,7 @@ Done in 0.31s.
 
 <details><summary>Or, using filters again, find the same blog post by title</summary>
 
-````json
+```json
 node needle-scripts/get-api-request 'blog-posts?title=Latest blog post DMehaffy authored'
 [
     {
@@ -262,12 +264,15 @@ node needle-scripts/get-api-request 'blog-posts?title=Latest blog post DMehaffy 
         "id": "5e70a09482f2837d262aee5e"
     }
 ]
+```
 
+</details>
 
 </details>
 
-
 </details>
+
+### POST, GET, PUT (update)
 
 <details><summary><strong>Click for POST, GET, PUT details</strong></summary>
 
@@ -345,7 +350,7 @@ $ node needle-scripts/post-api-request blog-posts
     "id": "5e74adc382f2837d262aee60"
 }
 Done in 0.33s.
-````
+```
 
 </details>
 
@@ -905,12 +910,414 @@ Done in 0.31s.
 
 </details>
 
-### Common node + axios utility scripts
+### DELETE
 
-Common use for GET:
+<details><summary><strong>Click for POST, GET, DELETE details</strong></summary>
 
-Create output directory. Then run something like the following (use quotation
-marks if using multiple query params):
+First we do a POST a new blog post, then we note the `_id`, then `GET`, and
+finally delete with a `DELETE`. Click to see details for each step:
+
+<details><summary><strong>&nbsp;&nbsp;&nbsp; 1: POST blog post</strong></summary>
+
+```json
+yarn post blog-posts
+yarn run v1.22.1
+$ node needle-scripts/post-api-request blog-posts
+{
+    "tags": [
+        {
+            "_id": "5e6a74efc9e24d7fdc2bf12a",
+            "tagSlug": "bitnami",
+            "tagName": "bitnami",
+            "tagDescription": "",
+            "vocabSlug": "freetags",
+            "vocabName": "FreeTags",
+            "legacyTag": {
+                "_id": "5e6a74efc9e24d7fdc2bf12b",
+                "tagId": "173",
+                "tagSlug": "bitnami",
+                "tagName": "bitnami",
+                "tagDescription": "",
+                "vocabId": "3",
+                "vocabSlug": "freetags",
+                "vocabName": "FreeTags",
+                "createdAt": "2020-03-12T17:44:15.883Z",
+                "updatedAt": "2020-03-12T17:44:15.883Z",
+                "__v": 0,
+                "id": "5e6a74efc9e24d7fdc2bf12b"
+            },
+            "createdAt": "2020-03-12T17:44:15.881Z",
+            "updatedAt": "2020-03-12T17:44:15.887Z",
+            "__v": 1,
+            "id": "5e6a74efc9e24d7fdc2bf12a"
+        },
+        {
+            "_id": "5e6a74f0c9e24d7fdc2bf139",
+            "tagSlug": "macvim",
+            "tagName": "macvim",
+            "tagDescription": "",
+            "vocabSlug": "freetags",
+            "vocabName": "FreeTags",
+            "legacyTag": {
+                "_id": "5e6a74f0c9e24d7fdc2bf13a",
+                "tagId": "178",
+                "tagSlug": "macvim",
+                "tagName": "macvim",
+                "tagDescription": "",
+                "vocabId": "3",
+                "vocabSlug": "freetags",
+                "vocabName": "FreeTags",
+                "createdAt": "2020-03-12T17:44:16.086Z",
+                "updatedAt": "2020-03-12T17:44:16.086Z",
+                "__v": 0,
+                "id": "5e6a74f0c9e24d7fdc2bf13a"
+            },
+            "createdAt": "2020-03-12T17:44:16.084Z",
+            "updatedAt": "2020-03-12T17:44:16.091Z",
+            "__v": 1,
+            "id": "5e6a74f0c9e24d7fdc2bf139"
+        },
+        {
+            "_id": "5e6a74efc9e24d7fdc2bf133",
+            "tagSlug": "mac",
+            "tagName": "mac",
+            "tagDescription": "",
+            "vocabSlug": "freetags",
+            "vocabName": "FreeTags",
+            "legacyTag": {
+                "_id": "5e6a74efc9e24d7fdc2bf134",
+                "tagId": "176",
+                "tagSlug": "mac",
+                "tagName": "mac",
+                "tagDescription": "",
+                "vocabId": "3",
+                "vocabSlug": "freetags",
+                "vocabName": "FreeTags",
+                "createdAt": "2020-03-12T17:44:15.996Z",
+                "updatedAt": "2020-03-12T17:44:15.996Z",
+                "__v": 0,
+                "id": "5e6a74efc9e24d7fdc2bf134"
+            },
+            "createdAt": "2020-03-12T17:44:15.993Z",
+            "updatedAt": "2020-03-12T17:44:16.003Z",
+            "__v": 1,
+            "id": "5e6a74efc9e24d7fdc2bf133"
+        }
+    ],
+    "_id": "5e77654267e11a4c6492209e",
+    "title": "second blog post",
+    "description": "This is the second blog post",
+    "body": "second in line!",
+    "createdAt": "2020-03-22T13:16:50.626Z",
+    "updatedAt": "2020-03-22T13:16:50.636Z",
+    "__v": 0,
+    "id": "5e77654267e11a4c6492209e"
+}
+{
+  ...
+}
+{
+  ...
+    "_id": "5e77654267e11a4c6492209f",
+    "title": "third blog post",
+    "description": "This is the third blog post",
+    "body": "third in line!",
+    "createdAt": "2020-03-22T13:16:50.640Z",
+    "updatedAt": "2020-03-22T13:16:50.653Z",
+    "__v": 0,
+    "id": "5e77654267e11a4c6492209f"
+}
+```
+
+</details>
+
+<details><summary><strong>&nbsp;&nbsp;&nbsp; 2: GET blog post</strong></summary>
+
+```json
+ yarn get blog-posts/5e77654267e11a4c6492209f
+yarn run v1.22.1
+$ node needle-scripts/get-api-request blog-posts/5e77654267e11a4c6492209f
+{
+    "tags": [
+        {
+            "_id": "5e6a74efc9e24d7fdc2bf12a",
+            "tagSlug": "bitnami",
+            "tagName": "bitnami",
+            "tagDescription": "",
+            "vocabSlug": "freetags",
+            "vocabName": "FreeTags",
+            "legacyTag": {
+                "_id": "5e6a74efc9e24d7fdc2bf12b",
+                "tagId": "173",
+                "tagSlug": "bitnami",
+                "tagName": "bitnami",
+                "tagDescription": "",
+                "vocabId": "3",
+                "vocabSlug": "freetags",
+                "vocabName": "FreeTags",
+                "createdAt": "2020-03-12T17:44:15.883Z",
+                "updatedAt": "2020-03-12T17:44:15.883Z",
+                "__v": 0,
+                "id": "5e6a74efc9e24d7fdc2bf12b"
+            },
+            "createdAt": "2020-03-12T17:44:15.881Z",
+            "updatedAt": "2020-03-12T17:44:15.887Z",
+            "__v": 1,
+            "id": "5e6a74efc9e24d7fdc2bf12a"
+        },
+        {
+            "_id": "5e6a74f0c9e24d7fdc2bf139",
+            "tagSlug": "macvim",
+            "tagName": "macvim",
+            "tagDescription": "",
+            "vocabSlug": "freetags",
+...
+...
+        {
+            "_id": "5e6a74efc9e24d7fdc2bf133",
+            "tagSlug": "mac",
+            "tagName": "mac",
+            "tagDescription": "",
+            "vocabSlug": "freetags",
+            "vocabName": "FreeTags",
+            "legacyTag": {
+                "_id": "5e6a74efc9e24d7fdc2bf134",
+                "tagId": "176",
+                "tagSlug": "mac",
+                "tagName": "mac",
+                "tagDescription": "",
+                "vocabId": "3",
+                "vocabSlug": "freetags",
+                "vocabName": "FreeTags",
+                "createdAt": "2020-03-12T17:44:15.996Z",
+                "updatedAt": "2020-03-12T17:44:15.996Z",
+                "__v": 0,
+                "id": "5e6a74efc9e24d7fdc2bf134"
+            },
+            "createdAt": "2020-03-12T17:44:15.993Z",
+            "updatedAt": "2020-03-12T17:44:16.003Z",
+            "__v": 1,
+            "id": "5e6a74efc9e24d7fdc2bf133"
+        }
+    ],
+    "_id": "5e77654267e11a4c6492209f",
+    "title": "third blog post",
+    "description": "This is the third blog post",
+    "body": "third in line!",
+    "createdAt": "2020-03-22T13:16:50.640Z",
+    "updatedAt": "2020-03-22T13:16:50.653Z",
+    "__v": 0,
+    "id": "5e77654267e11a4c6492209f"
+}
+Done in 0.23s.
+```
+
+</details>
+
+<details><summary><strong>&nbsp;&nbsp;&nbsp; 3: DELETE blog post</strong></summary>
+
+Let's get the `count`, then `delete`, then get the `count` again.
+
+````json
+ yarn get blog-posts/count
+yarn run v1.22.1
+$ node needle-scripts/get-api-request blog-posts/count
+12
+Done in 0.21s.
+
+yarn delete blog-posts/5e77654267e11a4c6492209f
+yarn run v1.22.1
+$ node needle-scripts/delete-api-request blog-posts/5e77654267e11a4c6492209f
+trying with  blog-posts/5e77654267e11a4c6492209f undefined
+the url http://awebfactory.org:4004/blog-posts/5e77654267e11a4c6492209f
+the options {
+  headers: {
+    Authorization: 'Bearer ey..'
+  }
+}
+{
+    "tags": [
+        {
+            "_id": "5e6a74efc9e24d7fdc2bf12a",
+            "tagSlug": "bitnami",
+            "tagName": "bitnami",
+            "tagDescription": "",
+            "vocabSlug": "freetags",
+            "vocabName": "FreeTags",
+            "legacyTag": {
+                "_id": "5e6a74efc9e24d7fdc2bf12b",
+                "tagId": "173",
+                "tagSlug": "bitnami",
+                "tagName": "bitnami",
+                "tagDescription": "",
+                "vocabId": "3",
+                "vocabSlug": "freetags",
+                "vocabName": "FreeTags",
+                "createdAt": "2020-03-12T17:44:15.883Z",
+                "updatedAt": "2020-03-12T17:44:15.883Z",
+                "__v": 0,
+                "id": "5e6a74efc9e24d7fdc2bf12b"
+            },
+            "createdAt": "2020-03-12T17:44:15.881Z",
+            "updatedAt": "2020-03-12T17:44:15.887Z",
+            "__v": 1,
+            "id": "5e6a74efc9e24d7fdc2bf12a"
+        },
+
+```json
+ yarn get blog-posts/count
+yarn run v1.22.1
+$ node needle-scripts/get-api-request blog-posts/count
+12
+Done in 0.21s.
+
+yarn delete blog-posts/5e77654267e11a4c6492209f
+yarn run v1.22.1
+$ node needle-scripts/delete-api-request blog-posts/5e77654267e11a4c6492209f
+the url http://example.org:9999/blog-posts/5e77654267e11a4c6492209f
+the options {
+  headers: {
+    Authorization: 'Bearer ey..'
+  }
+}
+{
+    "tags": [
+        {
+            "_id": "5e6a74efc9e24d7fdc2bf12a",
+            "tagSlug": "bitnami",
+            "tagName": "bitnami",
+            "tagDescription": "",
+            "vocabSlug": "freetags",
+            "vocabName": "FreeTags",
+            "legacyTag": {
+                "_id": "5e6a74efc9e24d7fdc2bf12b",
+                "tagId": "173",
+                "tagSlug": "bitnami",
+                "tagName": "bitnami",
+                "tagDescription": "",
+                "vocabId": "3",
+                "vocabSlug": "freetags",
+                "vocabName": "FreeTags",
+                "createdAt": "2020-03-12T17:44:15.883Z",
+                "updatedAt": "2020-03-12T17:44:15.883Z",
+                "__v": 0,
+                "id": "5e6a74efc9e24d7fdc2bf12b"
+            },
+            "createdAt": "2020-03-12T17:44:15.881Z",
+            "updatedAt": "2020-03-12T17:44:15.887Z",
+            "__v": 1,
+            "id": "5e6a74efc9e24d7fdc2bf12a"
+        },
+...
+        {
+            "_id": "5e6a74efc9e24d7fdc2bf133",
+            "tagSlug": "mac",
+            "tagName": "mac",
+            "tagDescription": "",
+            "vocabSlug": "freetags",
+            "vocabName": "FreeTags",
+            "legacyTag": {
+                "_id": "5e6a74efc9e24d7fdc2bf134",
+                "tagId": "176",
+                "tagSlug": "mac",
+                "tagName": "mac",
+                "tagDescription": "",
+                "vocabId": "3",
+                "vocabSlug": "freetags",
+                "vocabName": "FreeTags",
+                "createdAt": "2020-03-12T17:44:15.996Z",
+                "updatedAt": "2020-03-12T17:44:15.996Z",
+                "__v": 0,
+                "id": "5e6a74efc9e24d7fdc2bf134"
+            },
+            "createdAt": "2020-03-12T17:44:15.993Z",
+            "updatedAt": "2020-03-12T17:44:16.003Z",
+            "__v": 1,
+            "id": "5e6a74efc9e24d7fdc2bf133"
+        }
+    ],
+    "_id": "5e77654267e11a4c6492209f",
+    "title": "third blog post",
+    "description": "This is the third blog post",
+    "body": "third in line!",
+    "createdAt": "2020-03-22T13:16:50.640Z",
+    "updatedAt": "2020-03-22T13:16:50.653Z",
+    "__v": 0,
+    "id": "5e77654267e11a4c6492209f"
+}
+
+ yarn get blog-posts/count
+yarn run v1.22.1
+$ node needle-scripts/get-api-request blog-posts/count
+11
+Done in 0.30s.
+
+````
+
+</details>
+
+<details><summary><strong>&nbsp;&nbsp;&nbsp; 4: GET to Test deletion</strong></summary>
+
+```bash
+yarn get blog-posts/5e77654267e11a4c6492209f
+yarn run v1.22.1
+$ node needle-scripts/get-api-request blog-posts/5e77654267e11a4c6492209f
+{
+    "statusCode": 404,
+    "error": "Not Found",
+    "message": "Not Found"
+}
+Done in 0.21s.
+```
+
+</details>
+
+</details>
+
+## Node.js + Axios utility scripts
+
+<details><summary><strong>Common usage for GET</strong></summary>
+
+First of all, grab a JWT token based on username and password in `.env`
+
+```json
+node scripts/get-jwt.js
+http://awebfactory.org:4004/auth/local
+{ identifier: 'migration', password: 'headmigra11' }
+200 OK
+ {
+  jwt: 'ey...',
+  user: {
+    confirmed: true,
+    blocked: false,
+    _id: '5e624df99285582010deb347',
+    username: 'migration',
+    email: 'migration@awfactory.com',
+    provider: 'local',
+    createdAt: '2020-03-06T13:19:53.617Z',
+    updatedAt: '2020-03-06T13:19:53.626Z',
+    __v: 0,
+    role: {
+      _id: '5e62472c9285582010deb2e5',
+      name: 'Migration',
+      description: 'Role for migration only',
+      type: 'migration',
+      createdAt: '2020-03-06T12:50:52.153Z',
+      updatedAt: '2020-03-16T13:18:53.876Z',
+      __v: 0,
+      id: '5e62472c9285582010deb2e5'
+    },
+    legacyUser: null,
+    avatar: null,
+    id: '5e624df99285582010deb347'
+  }
+}
+```
+
+Then place the token in the `.env` file.
+
+Create an `output` directory. Then run something like the following (use
+quotation marks if using multiple query params):
 
 ```bash
 node scripts/get-api-request.js articles?name=One | json > output/featured.txt
@@ -923,7 +1330,9 @@ node scripts/get-api-request "tags?tagSlug=ajax&tagSlug=kalabox" | json > output
 200 OK
 ```
 
-Common use for POST:
+</details>
+
+<details><summary><strong>Common usage for POST</strong></summary>
 
 The command line paramter `blog-posts` assumes API name of `/blog-posts` as well
 as the presence of one or more items in the file
@@ -1029,3 +1438,6 @@ Command line execution of POST:
   id: '5e7094f982f2837d262aee5d'
 }
 ```
+
+</details>
+</details>
