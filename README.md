@@ -21,7 +21,7 @@ how well it works.
 
 I've been working with
 [plain node scripts](https://github.com/awebfactory/homepage-utility-scripts/tree/plain-node-scripts)
-for my HTTP requests utilities and tests up till now. Now I'm using
+for my HTTP requests utilities and tests up till now. Now I'm mainly using
 [Needle: The leanest and most handsome HTTP client in the Nodelands](https://github.com/tomas/needle)
 for consistency.
 
@@ -1128,53 +1128,6 @@ Done in 0.21s.
 yarn delete blog-posts/5e77654267e11a4c6492209f
 yarn run v1.22.1
 $ node needle-scripts/delete-api-request blog-posts/5e77654267e11a4c6492209f
-trying with  blog-posts/5e77654267e11a4c6492209f undefined
-the url http://awebfactory.org:4004/blog-posts/5e77654267e11a4c6492209f
-the options {
-  headers: {
-    Authorization: 'Bearer ey..'
-  }
-}
-{
-    "tags": [
-        {
-            "_id": "5e6a74efc9e24d7fdc2bf12a",
-            "tagSlug": "bitnami",
-            "tagName": "bitnami",
-            "tagDescription": "",
-            "vocabSlug": "freetags",
-            "vocabName": "FreeTags",
-            "legacyTag": {
-                "_id": "5e6a74efc9e24d7fdc2bf12b",
-                "tagId": "173",
-                "tagSlug": "bitnami",
-                "tagName": "bitnami",
-                "tagDescription": "",
-                "vocabId": "3",
-                "vocabSlug": "freetags",
-                "vocabName": "FreeTags",
-                "createdAt": "2020-03-12T17:44:15.883Z",
-                "updatedAt": "2020-03-12T17:44:15.883Z",
-                "__v": 0,
-                "id": "5e6a74efc9e24d7fdc2bf12b"
-            },
-            "createdAt": "2020-03-12T17:44:15.881Z",
-            "updatedAt": "2020-03-12T17:44:15.887Z",
-            "__v": 1,
-            "id": "5e6a74efc9e24d7fdc2bf12a"
-        },
-        ...
-
-
- yarn get blog-posts/count
-yarn run v1.22.1
-$ node needle-scripts/get-api-request blog-posts/count
-12
-Done in 0.21s.
-
-yarn delete blog-posts/5e77654267e11a4c6492209f
-yarn run v1.22.1
-$ node needle-scripts/delete-api-request blog-posts/5e77654267e11a4c6492209f
 the url http://example.org:9999/blog-posts/5e77654267e11a4c6492209f
 the options {
   headers: {
@@ -1283,7 +1236,7 @@ First of all, grab a JWT token based on username and password in `.env`
 
 ```json
 node scripts/get-jwt.js
-http://awebfactory.org:4004/auth/local
+http://example.com:9999/auth/local
 { identifier: 'migration', password: 'headmigra11' }
 200 OK
  {
