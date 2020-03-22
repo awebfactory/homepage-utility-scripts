@@ -274,8 +274,6 @@ node needle-scripts/get-api-request 'blog-posts?title=Latest blog post DMehaffy 
 First we do a POST a new blog post, then we note the `_id`, then `GET`, and
 finally update with a `PUT`. Click to see details of each:
 
-</details>
-
 <details><summary><strong>&nbsp;&nbsp;&nbsp; 1: POST blog post</strong></summary>
 
 ```js
@@ -900,6 +898,8 @@ $ node needle-scripts/put-api-request blog-posts
 }
 Done in 0.31s.
 ```
+
+</details>
 
 </details>
 
