@@ -13,7 +13,7 @@
     "delete": "node needle-scripts/delete-api-request"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "needle": "^2.3.3"
   }
